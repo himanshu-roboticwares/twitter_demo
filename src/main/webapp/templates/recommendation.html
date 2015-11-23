@@ -1,0 +1,19 @@
+<div>
+    <div class="row">
+        <div class="col-sm-12">People, You Follow:</div>
+    </div>
+    <div class="row" ng-repeat="follow in follows">
+        <button class="col-sm-12 btn-primary" title="Click to un-follow" ng-click="block(follow[1],$index)">
+            <img ng-src="{{follow[2]}}" class="tweetImg" /> {{follow[0]}}
+        </button>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-12">People, You May Like To Follow:</div>
+    </div>
+    <div class="row" ng-repeat="recommend in recommendations">
+        <button class="col-sm-12 btn-warning" title="Click to follow" ng-click="follow(recommend[1],$index)">
+            <img ng-src="{{recommend[2]}}" class="tweetImg" />  {{recommend[0]}}
+        </button>
+    </div>
+</div>

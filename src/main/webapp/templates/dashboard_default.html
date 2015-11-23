@@ -1,0 +1,49 @@
+<div>
+
+    <!--Profile View-->
+    <div class="dashboard_profile container-fluid">
+        <div class="row">
+            <img ng-src="{{ImageUrl}}" class="col-sm-8 col-sm-offset-2 dashboard_img" alt="No Image to Display!" />
+        </div>
+        <br />
+        <hr />
+        <br />
+        <div class="row">
+            <strong class="col-sm-8 col-sm-offset-2 text-uppercase" > Username: {{Username}}</strong>
+        </div>
+        <div class="row">
+            <strong class="col-sm-8 col-sm-offset-2 text-uppercase" > Name: {{Name}}</strong>
+        </div>
+    </div>
+    <!--No tweets-->
+    <span  ng-show="no_tweets">
+        <strong style="color: darkred ;" >
+            No Tweets to display!
+        </strong>
+    </span>
+    <!--Current Tweets View-->
+    <div class="dashboard_tweets container-fluid" ng-hide="no_tweets">
+        <!--No Tweet-->
+
+
+        <div  style="margin-top:5px; border:3px solid #c0a16b;" ng-repeat="tweet in tweets" >
+
+            <div class="row" style="padding: 20px;">
+                <div class="row">
+                    <div class=" col-sm-4">
+                        <img class="tweetImg" style="border: 2px solid black; border-radius: 20%;" ng-src="{{tweet[4]}}" />
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row"><strong class="col-sm-12" style="color: blue">{{tweet[1]}}</strong></div>
+                        <div class="row"><span><h6 style="color: blue; display: inline">{{tweet[1]}}</h6> posted tweet @ {{tweet[2] | date:'yyyy-MM-dd HH:mm:ss Z'}}</span></div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row col-sm-12" style="margin-left:5px;">
+                    Message: <strong class="col-sm-12">{{tweet[3]}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

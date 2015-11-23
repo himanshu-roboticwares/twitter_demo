@@ -1,0 +1,18 @@
+<div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top container-fluid row">
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" ui-sref="Dashboard.default">Dashboard</a></li>
+                <li ng-repeat="link in welcome_links">
+                    <a ui-sref="Dashboard.{{link}}">{{link}}</a>
+                </li>
+            </ul>
+            <ul class="pull-right nav navbar-nav">
+                <li><a> Welcome {{name}} <img ng-src={{ImageUrl}} style="width:30px; height:25px; border-radius: 20%;" /></a></li>
+                <li><a class="glyphicon glyphicon-log-out" title="Logout" ng-click="logout()"></a></li>
+                <li><button class="btn-primary ext_btn" ng-click="popTweetWindow()"><img src="img/icon.jpg" style="width:20%; height:15%; border-radius: 30%;" />Tweet</button></li>
+            </ul>
+    </nav>
+
+    <div style="margin: 70px;" ui-view></div>
+</div>

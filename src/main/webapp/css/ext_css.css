@@ -1,0 +1,99 @@
+body{
+    height:100%;
+    width:100%;
+}
+
+.login_div{
+    width:30%;
+    border: 2px black solid;
+    margin-left:50%;
+    margin-top: 5%;
+    background-color: #ffffff;
+    opacity: 0.9;
+    padding: 2%;
+}
+.signup_div{
+    width:30%;
+    border: 2px black solid;
+    margin-left:50%;
+    margin-top: 2%;
+    background-color: #ffffff;
+    opacity: 0.9;
+    padding: 2%;
+}
+
+.forgot_pswd{
+
+    width:30%;
+    border: 2px black solid;
+    margin-left:35%;
+    margin-top: 10%;
+    background-color: rgba(180,225,225,0.5)
+}
+.row{
+    padding: 4px;
+}
+
+.change_Pswd{
+    width:30%;
+    border: 2px black solid;
+    margin-left:35%;
+    margin-top: 10%;
+    background-color: rgba(180,225,225,0.5)
+}
+.error_notify{
+    font-size: 9px; color: RED;
+}
+
+.ext_btn{
+    margin-top:7%;
+    margin-right: 5%;
+}
+.modal{
+    display: block;
+}
+
+.dashboard_profile{
+    width: 30%;
+    overflow: auto;
+    /*background-color: rgba(24,15,25,0.5);*/
+    border: 2px solid black;
+    border-radius: 5%;
+    margin: 2%;
+    float: right;
+}
+
+.dashboard_tweets{
+    width: 50%;
+    overflow: auto;
+    background-color: rgba(119,89,128);
+    margin: 2%;
+    float: right;
+    margin-bottom: 60px;
+}
+
+.dashboard_img{
+    height:80%;
+    border: 1px solid black;
+    border-radius: 20%;
+}
+
+.prof-text{
+    color: #ffffff;
+}
+
+hr{
+    border:1px solid #c0a16b;
+}
+
+.black{
+    background-color: rgba(20,15,25,1);
+    color: white;
+}
+
+
+.tweetImg {
+    min-height: 70px;
+    max-height: 70px;
+    border-radius: 40%;
+}

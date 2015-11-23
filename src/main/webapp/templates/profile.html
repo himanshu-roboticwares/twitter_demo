@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <h2>Profile</h2>
+    </div>
+    <hr />
+    <div>
+        <div style="width:70%; float:right;">
+
+            <div class="row">
+                <label class="col-sm-6">Username</label>
+                <input type="text" class="col-sm-4" ng-disabled="true" value="{{profile.username}}"/>
+            </div>
+            <div class="row">
+                <label class="col-sm-6">Name</label>
+                <input type="text" class="col-sm-4" ng-disabled="true" value="{{profile.name}}"/>
+            </div>
+            <div class="row">
+                <label class="col-sm-6">E-Mail</label>
+                <input type="text" class="col-sm-4" ng-disabled="true" value="{{profile.email}}"/>
+            </div>
+            <div class="row">
+                <label class="col-sm-6">Contact Number</label>
+                <input type="text" class="col-sm-4" ng-disabled="true" value="{{profile.phone}}"/>
+            </div>
+        </div>
+        <div style="width:30%; float:right;">
+            <div class="image-upload">
+                        <img ng-src="{{profile.profileImgUrl}}" title="click to change profile image" style="border:2px solid black; border-radius: 20%; cursor: pointer;" ng-click="uploadImage()" />
+            </div>
+        </div>
+    </div>
+</div>

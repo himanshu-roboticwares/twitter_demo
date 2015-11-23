@@ -1,0 +1,31 @@
+<div>
+    <!--No tweets-->
+    <div  ng-show="no_MyTweets">
+        <strong style="color: darkred ;" >
+            No Tweets to display!
+        </strong>
+    </div>
+
+    <!--My Tweets View-->
+    <div class="dashboard_tweets container-fluid" ng-hide="no_MyTweets">
+        <div  style="margin-top:5px; border:3px solid #c0a16b;" ng-repeat="tweet in tweets" >
+
+            <div class="row" style="padding: 20px;">
+                <div class="row">
+                    <div class=" col-sm-4">
+                        <img class="tweetImg" style="border: 2px solid black; border-radius: 20%;" ng-src="{{imageUrl}}" />
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row"><strong class="col-sm-12" style="color: blue;">{{author}}</strong></div>
+                        <div class="row"><span><h6 style="color: blue; display: inline">{{author}}</h6> posted tweet @ {{tweet.time | date:'yyyy-MM-dd HH:mm:ss Z'}}</span></div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row col-sm-12" style="margin-left:5px;">
+                    Message: <strong class="col-sm-12">{{tweet.message}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
