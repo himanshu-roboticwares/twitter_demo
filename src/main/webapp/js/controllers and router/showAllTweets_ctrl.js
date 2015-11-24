@@ -1,7 +1,7 @@
 /**
  * Created by himanshu on 18/11/15.
  */
-app.controller('showAllTweets_ctrl',['$scope','$http','$interval','loggedUserDetails','$rootScope',function($scope,$http,$interval,loggedUserDetails, $rootScope){
+app.controller('showAllTweets_ctrl',['$scope','$http','$interval','loggedUserDetails','$localStorage','$timeout',function($scope,$http,$interval,loggedUserDetails, $localStorage, $timeout){
 
     $scope.ImageUrl=loggedUserDetails.getUrl();
     $scope.Name=loggedUserDetails.getName();
@@ -43,9 +43,20 @@ app.controller('showAllTweets_ctrl',['$scope','$http','$interval','loggedUserDet
         }
     );},60000);
 
-    //Listener for call made at Update profile Image url
-    $rootScope.$on('updateImgUrl', function(){
-        $scope.ImageUrl=loggedUserDetails.getUrl();
+
+    //Handle profile image url change
+    $scope.$watch('$localStorage.url', function(){
+        //changes are not immediately reflected. So, wait for 5 seconds.
+        $timeout(function(){
+            console.log("$watch in dash "+$localStorage.url);
+            console.log(loggedUserDetails.getUrl());
+            $scope.ImageUrl=loggedUserDetails.getUrl();
+        },5000);
     });
+
+//    //Listener for call made at Update profile Image url
+//    $rootScope.$on('updateImgUrl', function(){
+//        $scope.ImageUrl=loggedUserDetails.getUrl();
+//    });
 
 }]);
