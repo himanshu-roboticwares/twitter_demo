@@ -4,7 +4,7 @@
         <div class="row" ng-init="invalid_cred=false;" ng-show="invalid_cred">
             <div class="col-sm-12 pull-right"> <p class="error_notify">Login Credentials are invalid. Please try again.</p></div>
         </div>
-        <form name="login">
+        <form name="login" ng-submit="authUser()">
             <div class="row">
                 <div class="col-sm-12">
                     <input type="text" name="un" class="form-control focus" placeholder="Phone or email" ng-model="login_cred.username" required />
@@ -15,7 +15,7 @@
                     <input type="password" name="pa" class=" form-control focus" placeholder="Password" ng-model="login_cred.password" required />
                 </div>
                 <div class="col-sm-4">
-                    <button class="btn-primary" ng-click="authUser()" ng-disabled="!(login.un.$dirty && login.pa.$dirty)">Login</button>
+                    <input type="submit" class="btn-primary" ng-disabled="!(login.un.$dirty && login.pa.$dirty)" value="Login" />
                 </div>
             </div>
         </form>
@@ -25,22 +25,22 @@
         <div class="row">
             <p style="display: inline; font-weight: bolder">New to Twitter?</p> Sign up
         </div>
-        <form name="signup">
-        <div class="row col-sm-12">
-            <input type="text" name="nm" class="form-control focus" placeholder="Full Name" ng-model="new_user.name" required/>
-        </div>
-        <div class="row col-sm-12">
-            <input type="email" name="em" class="form-control focus" placeholder="Email" ng-model="new_user.email" required/>
-        </div>
-        <div class="row col-sm-12">
-            <input type="tel" name="ph" class="form-control focus" placeholder="Contact Number" ng-model="new_user.phone" required />
-        </div>
-        <div class="row col-sm-12">
-            <input type="password" name="pa" class="form-control focus" placeholder="Password" ng-model="new_user.password" required/>
-        </div>
-        <div class="row col-sm-12">
-            <button class="btn-info pull-right" ng-click="addUser()" ng-disabled="!(signup.nm.$dirty && signup.em.$dirty && signup.ph.$dirty && signup.pa.$dirty)" >Sign up for Twitter</button>
-        </div>
+        <form name="signup" ng-submit="addUser()">
+            <div class="row col-sm-12">
+                <input type="text" name="nm" class="form-control focus" placeholder="Full Name" ng-model="new_user.name" required/>
+            </div>
+            <div class="row col-sm-12">
+                <input type="email" name="em" class="form-control focus" placeholder="Email" ng-model="new_user.email" required/>
+            </div>
+            <div class="row col-sm-12">
+                <input type="tel" name="ph" class="form-control focus" placeholder="Contact Number" pattern="[1-9]{1}[0-9]{9}" ng-model="new_user.phone" required />
+            </div>
+            <div class="row col-sm-12">
+                <input type="password" name="pa" class="form-control focus" placeholder="Password" ng-model="new_user.password" required/>
+            </div>
+            <div class="row col-sm-12">
+                <input type="submit" class="btn-info pull-right" ng-disabled="!(signup.nm.$dirty && signup.em.$dirty && signup.ph.$dirty && signup.pa.$dirty)" value="Sign up for Twitter" />
+            </div>
         </form>
     </div>
     </div>

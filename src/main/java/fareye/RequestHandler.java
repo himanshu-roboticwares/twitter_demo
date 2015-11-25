@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +19,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
-
 /**
  * Created by himanshu on 6/11/15.
  */
@@ -49,7 +46,7 @@ public class RequestHandler {
     @RequestMapping("/addUser")
     public ResponseEntity handleAddUserRequest(@RequestBody User user) {
         try {
-            //Deny user account if email or phone is already registered.
+//            //Deny user account if email or phone is already registered.
             if (userRepository.findByEmailOrPhone(user.getEmail(),user.getPhone()) == null){
                 //By default, account status is inactive.
                 user.setAcStatus("Inactive");
@@ -61,8 +58,7 @@ public class RequestHandler {
                 //Update user instance to get user's auto generated username
                 user=userRepository.findByEmail(user.getEmail());
                 followerRepository.save(new Follower(user.getUsername(),user.getUsername()));
-
-                //Store data on session
+//              //Store data on session
                 sessionData.setUsername(user.getUsername());
 
                 return new ResponseEntity(user,HttpStatus.OK);// send user data to Angularjs

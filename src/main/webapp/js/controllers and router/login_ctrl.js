@@ -18,6 +18,7 @@ app.controller('login_ctrl', ['$window','$interval','$scope','$http','$state','l
 
 //    Add new user
     $scope.addUser=function(){
+        console.log("Adding user...");
         $http({
             url:'/addUser',
             method:'POST',
@@ -50,6 +51,7 @@ app.controller('login_ctrl', ['$window','$interval','$scope','$http','$state','l
 
 //    Authenticate Login Credentials
     $scope.authUser=function(){
+        console.log("Authenticating user");
         var req={
             url:'/auth',
             method:'POST',

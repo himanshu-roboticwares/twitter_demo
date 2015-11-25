@@ -36,17 +36,6 @@
 			<scope>test</scope>
 		</dependency>
 
-        <!--for session management-->
-        <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session</artifactId>
-            <version>1.0.2.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-redis</artifactId>
-        </dependency>
-
         <!--for postgres database-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -61,13 +50,6 @@
             <artifactId>postgresql</artifactId>
             <version>9.3-1100-jdbc41</version>
             <scope>runtime</scope>
-        </dependency>
-
-        <!--for sending mail-->
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4.1</version>
         </dependency>
 
 	</dependencies>
