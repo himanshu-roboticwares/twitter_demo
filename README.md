@@ -42,5 +42,11 @@ Query: CREATE SEQUENCE hibernate_sequence
   INCREMENT 1
   MINVALUE 1
 
-
 5. IDE, I had used: Intellij IDEA
+
+6. Include java-json-jar
+
+7.Change src/resources/application.properties attributes:
+  7.1. spring.datasource.url
+  7.2. spring.datasource.username
+  7.3. spring.datasource.password
