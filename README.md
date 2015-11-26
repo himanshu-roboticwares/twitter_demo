@@ -1,7 +1,7 @@
 # twitter_demo
 Sample application using angularjs, postgresql and spring-boot
 Pre-requisites for the project.
-
+<pre>
 1. Create table "users" in postgresql
 
 Query: CREATE TABLE users
@@ -50,3 +50,4 @@ Query: CREATE SEQUENCE hibernate_sequence
   7.1. spring.datasource.url
   7.2. spring.datasource.username
   7.3. spring.datasource.password
+</pre>
